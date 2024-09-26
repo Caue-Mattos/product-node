@@ -16,3 +16,17 @@ export const getProductById = async (id) => {
         where:{id:parseInt(id)},
     });
 };
+
+export const updateProduct = async(id, productData) => {
+    return await prisma.product.update({
+        where: { id: parseInt(id) },
+        data: productData,
+    });
+};
+
+export const deleteProduct = async(id) => {
+    return await prisma.product.delete({
+        where:{ id: parseInt(id)},
+    });
+};
+
